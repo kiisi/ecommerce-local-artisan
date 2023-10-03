@@ -30,6 +30,10 @@ position: relative;
 
             li {
                 cursor: pointer;
+                transition:color .5s ease;
+                &:hover{
+                    color:$sec-color;
+                }
             }
         }
 
