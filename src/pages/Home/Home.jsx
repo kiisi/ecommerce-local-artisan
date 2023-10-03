@@ -14,6 +14,7 @@ import "./home.scss";
 import Card from "../../components/SmallCard/Card";
 import { gsap, Power4 } from "gsap";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 const Home = () => {
   const clippy = useRef();
   const imageRef = useRef();
@@ -147,7 +148,10 @@ const Home = () => {
         <div className="icons-link">
           <BsBag />
           <AiOutlineSearch />
-          <BiUserCircle />
+          <Link to='/login'>
+           <BiUserCircle />
+          </Link>
+         
         </div>
 
         <div className="menu">
@@ -242,18 +246,18 @@ const Home = () => {
       <AnimatePresence mode="wait">
         {menuOpen && (
           <motion.div
-            initial={{
-              opacity: 0,
-           
-              left: "100%",
-            }}
-            animate={{ opacity: 1,  left: "0%" }}
-            exit={{ opacity: 0, left: "100%" }}
-            transition={{
-                duration: 1,
-                ease: 'easeInOut',
-          
+              initial={{
+                opacity: 0,
+            
+                left: "100%",
               }}
+              animate={{ opacity: 1,  left: "0%" }}
+              exit={{ opacity: 0, left: "100%" }}
+              transition={{
+                  duration: 1,
+                  ease: 'easeInOut',
+            
+                }}
             className="mobileScreen"
           >
             <ul>
