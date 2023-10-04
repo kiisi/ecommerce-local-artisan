@@ -84,8 +84,8 @@ $sec-color: #B20E10;
             flex-direction: column;
             gap: 20px;
            
-            @media (max-width: 767px) {
-                width: 90%;
+            @media (max-width: 900px) {
+                width: 70%;
                 margin: 0 auto;
                 }
             h1{
@@ -98,8 +98,9 @@ $sec-color: #B20E10;
                 gap: 10px;
               
                 width: 100%;
-                @media (max-width: 767px) {
+                @media (max-width: 900px) {
                   flex-direction: column;
+                  
                   }
                 input{
                     flex: 1;
