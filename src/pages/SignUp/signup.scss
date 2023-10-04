@@ -98,6 +98,9 @@ $sec-color: #B20E10;
                 gap: 10px;
               
                 width: 100%;
+                @media (max-width: 767px) {
+                  flex-direction: column;
+                  }
                 input{
                     flex: 1;
                     border-bottom: solid 2px gray;
