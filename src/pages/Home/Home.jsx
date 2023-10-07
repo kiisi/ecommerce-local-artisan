@@ -143,7 +143,6 @@ const Home = () => {
           <li>Contact</li>
           <li>Artisans</li>
           <li>Products</li>
-          <li>Contact</li>
         </ul>
         <div className="icons-link">
           <BsBag />
