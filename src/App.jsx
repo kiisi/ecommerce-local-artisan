@@ -2,9 +2,13 @@ import { createBrowserRouter, Outlet, RouterProvider, ScrollRestoration } from "
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import SignUp from "./pages/SignUp/SignUp";
+
 import ArtisanPage from "./pages/ArtisanPage/ArtisanPage";
 import NavBar from "./components/Navbar/NavBar";
 import NavContextProvider from "./contexts/NavContext";
+
+import Profile from "./pages/Profile";
+
 
 const Root = () => {
 
@@ -30,7 +34,7 @@ const router = createBrowserRouter([
         index: true,
         element: <Home />
       },
-      
+
     {
       path:"/login",
       element:<Login/>
@@ -45,9 +49,23 @@ const router = createBrowserRouter([
       path:"/catpage/:id",
       element:<ArtisanPage/>
     },
+
+      {
+        path: "/login",
+        element: <Login />
+      },
+      {
+        path: "/register",
+        element: <SignUp />
+      },
+      {
+        path: "/profile",
+        element: <Profile />
+      },
+
     ],
   },
-  
+
 ]);
 
 export default function App() {
