@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect,useContext, useRef, useState } from "react";
 import { BsBag, BsCart4 } from "react-icons/bs";
 import {
   AiOutlineSearch,
@@ -7,6 +7,7 @@ import {
   AiOutlineMenu,
   AiOutlineCopyright,
 } from "react-icons/ai";
+// import { NavContext } from "../contexts/NavContext"
 import { IoShirtOutline } from "react-icons/io5";
 import { RiSecurePaymentLine, RiCustomerService2Fill } from "react-icons/ri";
 import { BiUserCircle } from "react-icons/bi";
@@ -15,10 +16,11 @@ import Card from "../../components/SmallCard/Card";
 import { gsap, Power4 } from "gsap";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
+import { NavContext } from "../../contexts/NavContext";
 const Home = () => {
   const clippy = useRef();
   const imageRef = useRef();
-  const [menuOpen, setMenuOpen] = useState(false);
+  const {menu, setMenu} = useContext(NavContext)
 
   useEffect(() => {
     const timeline = gsap.timeline();
@@ -136,7 +138,7 @@ const Home = () => {
 
   return (
     <div className="main-Container">
-      <nav className="nav-Container">
+      {/* <nav className="nav-Container">
         <img src="" alt="logoImage" className="log" />
         <ul>
           <li>Home</li>
@@ -169,7 +171,7 @@ const Home = () => {
             />
           )}
         </div>
-      </nav>
+      </nav> */}
       <section className="home-Container">
         <div ref={clippy} className="left">
           <small>artisans hub</small>
@@ -242,32 +244,7 @@ const Home = () => {
       <footer>
         <AiOutlineCopyright /> CodeInnovators
       </footer>
-      <AnimatePresence mode="wait">
-        {menuOpen && (
-          <motion.div
-              initial={{
-                opacity: 0,
-            
-                left: "100%",
-              }}
-              animate={{ opacity: 1,  left: "0%" }}
-              exit={{ opacity: 0, left: "100%" }}
-              transition={{
-                  duration: 1,
-                  ease: 'easeInOut',
-            
-                }}
-            className="mobileScreen"
-          >
-            <ul>
-              <li>Home</li>
-              <li>Contact</li>
-              <li>Artisans</li>
-              <li>Products</li>
-            </ul>
-          </motion.div>
-        )}
-      </AnimatePresence>
+    
     </div>
   );
 };
