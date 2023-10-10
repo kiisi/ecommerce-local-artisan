@@ -50,14 +50,7 @@ const router = createBrowserRouter([
       element:<ArtisanPage/>
     },
 
-      {
-        path: "/login",
-        element: <Login />
-      },
-      {
-        path: "/register",
-        element: <SignUp />
-      },
+      
       {
         path: "/profile",
         element: <Profile />
