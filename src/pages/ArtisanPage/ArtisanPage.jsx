@@ -73,7 +73,7 @@ const ArtisanPage = () => {
 
 <section className="popularCat">
         {artisanProducts.map((item) => (
-          <LongCard item={item} key={item.description} />
+          <LongCard link='/newprofile/23' item={item} key={item.description} />
         ))}
       </section>
    </div>

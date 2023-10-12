@@ -196,7 +196,7 @@ const Home = () => {
       </p>
       <section className="popularCat">
         {artisanProducts.map((item) => (
-          <Card item={item} key={item.description} />
+          <Card item={item} link='/catpage/123' key={item.description} />
         ))}
       </section>
       <p
@@ -207,7 +207,7 @@ const Home = () => {
       </p>
       <section className="popularCat">
         {artisans.map((item) => (
-          <Card item={item} key={item.description} />
+          <Card item={item} link='newprofile/23' key={item.description} />
         ))}
       </section>
       <div className="perContainer">

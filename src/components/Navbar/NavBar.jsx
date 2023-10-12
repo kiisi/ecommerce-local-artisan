@@ -24,9 +24,14 @@ const NavBar = () => {
 <nav className="nav-Container">
     <img src="" alt="logoImage" className="log" />
     <ul>
+    <Link to='/'>
       <li>Home</li>
+      </Link>
       <li>Contact</li>
-      <li>Artisans</li>
+      <Link to='/newprofile'>
+              
+              <li>Artisans</li>
+              </Link>
       <li>Products</li>
       <li>Contact</li>
     </ul>
@@ -74,9 +79,14 @@ const NavBar = () => {
             className="mobileScreen"
           >
             <ul>
-              <li>Home</li>
+            <Link to='/'>
+      <li>Home</li>
+      </Link>
               <li>Contact</li>
+              <Link to='/newprofile'>
+              
               <li>Artisans</li>
+              </Link>
               <li>Products</li>
             </ul>
           </motion.div>

@@ -6,10 +6,10 @@ import {
 
   AiFillStar,
 } from "react-icons/ai";
-const LongCard = ({item}) => {
+const LongCard = ({item,link}) => {
   return (
   
-<Link className='longCard' to='profile/23'>
+<Link className='longCard' to={link}>
    
        
         <img src={item.image} alt="" />

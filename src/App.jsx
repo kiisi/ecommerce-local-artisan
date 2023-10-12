@@ -8,6 +8,8 @@ import NavBar from "./components/Navbar/NavBar";
 import NavContextProvider from "./contexts/NavContext";
 
 import Profile from "./pages/Profile";
+import ArtisanProfile from "./pages/NewProfile/ArtisanProfile";
+import ProductPage from "./pages/ProductPage/ProductPage";
 
 
 const Root = () => {
@@ -55,7 +57,16 @@ const router = createBrowserRouter([
         path: "/profile",
         element: <Profile />
       },
+      
+      {
+        path: "/newprofile/:id",
+        element: <ArtisanProfile />
+      },
 
+      {
+        path: "/product/:id",
+        element: <ProductPage />
+      },
     ],
   },
 

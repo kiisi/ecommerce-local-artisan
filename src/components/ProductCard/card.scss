@@ -1,40 +1,33 @@
-.longCard{
-    width: 23%;
-    height: 700px;
+.pcard{
+    
+    height: 350px;
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: 10px;
-    background: #0000000b;
+    // background: #0000000b;
     justify-content: center;
     border-radius: 10px;
     cursor: pointer;
-    // background: #000;
-    @media (max-width: 767px) {
-      width: 38%;
-      height: 450px;
-           }
+    width: 23%;
+    margin-bottom: 2%;
+     @media (max-width: 767px) {
+         width: 28%;
+          
+             }
     img{
         width: 80%;
         height: 70%;
         object-fit: cover;
         object-position: center;
     }
-    .name{
-        display: flex;
-        gap: 5px;
+    p{
         font-size: 20px;
         font-weight: 400;
-        align-items: center;
         @media (max-width: 767px) {
           font-size: 15px;
           font-weight: 300;
           
-             }
-             span{
-                svg{
-                 color: rgb(226, 226, 31);
-                }
              }
     }
 }
