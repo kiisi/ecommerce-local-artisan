@@ -180,6 +180,9 @@ cursor: pointer;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2%;
+    @media (max-width: 767px) {
+            width: 100%;
+                        }
     /* Add styles for product listings and categories here */
   }
   
