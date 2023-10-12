@@ -15,9 +15,15 @@
    margin: 0 auto;
   display: flex;
   gap: 20px;
+      @media (max-width: 767px) {
+ flex-direction: column;
+           }
   .left{
     width: 30%;
     height: 300px;
+     @media (max-width: 767px) {
+    width: 100%;
+                }
     img {
         height: 100%;
         width: 100%;
@@ -28,6 +34,9 @@
   }
     .right{
         width: 70%;
+        @media (max-width: 767px) {
+          width: 100%;
+                      }
         h1 {
             font-size: 60px;
       
@@ -45,6 +54,7 @@
           background-color: #fff;
           border-radius: 5px;
           margin-top: 20px;
+        
         
           h2 {
             font-size: 20px;
@@ -90,7 +100,10 @@ gap: 20px;
     display: flex;
     justify-content: space-between;
     height: 400px;
+    @media (max-width: 767px) {
 
+      height: 200px;
+           }
     img{
         width: 48%;
         height: 100%;
@@ -110,6 +123,10 @@ cursor: pointer;
     height: 600px;
     display: flex;
     justify-content: space-between;
+        @media (max-width: 767px) {
+
+      height: 300px;
+           }
     .left{
         width: 48%;
         height: 100%;
