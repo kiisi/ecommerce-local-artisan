@@ -10,15 +10,20 @@
     border-radius: 10px;
     cursor: pointer;
     // background: #000;
+    margin-bottom: 2%;
     @media (max-width: 767px) {
       width: 38%;
-      height: 450px;
+      height: 400px;
            }
     img{
         width: 80%;
         height: 70%;
         object-fit: cover;
         object-position: center;
+        @media (max-width: 767px) {
+            width: 95%;
+           
+                 }
     }
     .name{
         display: flex;
