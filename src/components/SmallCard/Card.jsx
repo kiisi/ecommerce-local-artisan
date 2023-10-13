@@ -5,7 +5,7 @@ import "./card.scss";
 const Card = ({ item ,link }) => {
   return (
     <Link className={`card ${item.wide ? "wide" : "norm"}`} to={link}>
-      <img src={item.image} alt="" />
+      <img src={item?.img} alt="image-for-card" />
 
       <p className="name">{item.name}</p>
     </Link>

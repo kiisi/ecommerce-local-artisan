@@ -17,6 +17,8 @@ import { gsap, Power4 } from "gsap";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { NavContext } from "../../contexts/NavContext";
+import { ArtisanProducts, Artisans, Products } from "../../utils/constants";
+import ProductCard from "../../components/ProductCard/ProductCard";
 const Home = () => {
   const clippy = useRef();
   const imageRef = useRef();
@@ -59,82 +61,7 @@ const Home = () => {
     // }, '-=.5')
   }, []);
 
-  const artisanProducts = [
-    {
-      name: "Chef",
-      image:
-        "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80",
-      description:
-        "Traditional handwoven Kente cloth with vibrant colors and intricate patterns.",
-    },
-    {
-      name: "Tailor",
-      image:
-        "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bG9jYWxseSUyMG1hZGUlMjBzaG9lc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
-      description:
-        "A set of beautifully crafted beaded jewelry, including a necklace and earrings.",
-    },
-    {
-      name: "Electrician",
-      image:
-        "https://images.unsplash.com/photo-1575537302964-96cd47c06b1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fGxvY2FsbHklMjBtYWRlJTIwc2hvZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
-      description:
-        "A hand-carved wooden mask sculpture featuring traditional African designs.",
-      wide: true,
-    },
-    {
-      name: "Plumber",
-      image:
-        "https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fGxvY2FsbHklMjBtYWRlJTIwc2hvZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
-      description:
-        "A decorative pottery vase with unique glazing and artistic detailing.",
-      wide: true,
-    },
-    {
-      name: "Carpenter",
-      image:
-        "https://images.unsplash.com/photo-1555378322-2d4b84bc2790?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGxvY2FsbHklMjBtYWRlJTIwc2hvZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
-      description:
-        "Colorful batik print fabric, perfect for traditional clothing or home decor.",
-    },
-    {
-      name: "HairDresser",
-      image:
-        "https://images.unsplash.com/photo-1548801133-da353ebb1d97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fGxvY2FsbHklMjBtYWRlJTIwc2hvZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
-      description:
-        "Hand-stitched leather wallet with multiple compartments for functionality.",
-    },
-  ];
-  const artisans = [
-    {
-      name: "Amina Abdullahi",
-      profession: "Potter",
-      location: "Kano, Nigeria",
-      specialty: "Handcrafted clay pottery",
-      bio: "Amina Abdullahi is a talented potter based in Kano, Nigeria. She has been honing her craft for over 20 years, creating unique and functional clay pottery that reflects the rich cultural heritage of her region.",
-    },
-    {
-      name: "Kwame Mensah",
-      profession: "Woodcarver",
-      location: "Accra, Ghana",
-      specialty: "Traditional African wooden sculptures",
-      bio: "Kwame Mensah is a master woodcarver from Accra, Ghana, known for his exquisite wooden sculptures that tell stories of African traditions and spirituality.",
-    },
-    {
-      name: "Nneka Okonkwo",
-      profession: "Textile Weaver",
-      location: "Enugu, Nigeria",
-      specialty: "Handwoven Adire fabric",
-      bio: "Nneka Okonkwo is a skilled textile weaver based in Enugu, Nigeria. She specializes in creating beautiful Adire fabric, a traditional Yoruba textile known for its intricate tie-dye patterns.",
-    },
-    {
-      name: "Mohammed Ali",
-      profession: "Blacksmith",
-      location: "Timbuktu, Mali",
-      specialty: "Forged metal artwork and tools",
-      bio: "Mohammed Ali is a renowned blacksmith from Timbuktu, Mali. He forges not only functional metal tools but also breathtaking metal artwork that captures the spirit of the Sahara desert.",
-    },
-  ];
+
 
   return (
     <div className="main-Container">
@@ -195,10 +122,19 @@ const Home = () => {
         Popular Categories of Artisans
       </p>
       <section className="popularCat">
-        {artisanProducts.map((item) => (
+        {ArtisanProducts.map((item) => (
           <Card item={item} link='/catpage/123' key={item.description} />
         ))}
       </section>
+      <h2 className="title">Products For You</h2>
+      <section className="products">
+    
+        {
+        Products.map((item) => (<ProductCard link='/product/123' key={item.id} item={item} />))
+        }
+        {/* Product listings and categories go here */}
+      </section>
+
       <p
         style={{ marginBottom: "10px", marginLeft: "40px", fontSize: "25px" }}
         className="artisanTitle"
@@ -206,7 +142,7 @@ const Home = () => {
         Popular Artisans
       </p>
       <section className="popularCat">
-        {artisans.map((item) => (
+        {Artisans.map((item) => (
           <Card item={item} link='newprofile/23' key={item.description} />
         ))}
       </section>
@@ -241,9 +177,6 @@ const Home = () => {
         </div>
       </div>
 
-      <footer>
-        <AiOutlineCopyright /> CodeInnovators
-      </footer>
     
     </div>
   );
