@@ -12,7 +12,7 @@ const LongCard = ({item,link}) => {
 <Link className='longCard' to={link}>
    
        
-        <img src={item.image} alt="" />
+        <img src={item.img} alt="long-card-img" />
      
          
          <div className="name">

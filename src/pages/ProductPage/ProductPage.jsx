@@ -16,58 +16,9 @@ import { Link, useParams } from "react-router-dom";
 // import Loader from "../../components/Loader/Loader";
 // import { CartContext } from "../../contexts/CartContext"
 import { motion } from "framer-motion";
+import { Products } from "../../utils/constants";
 const ProductPage = () => {
-    const products = [
-        {
-          id: 1,
-          name: "Handcrafted Pottery",
-          price: 25.99,
-          sellerName: "ArtisanCrafts",
-          image: "pottery.jpg",
-          images: ["pottery.jpg", "pottery-detail1.jpg", "pottery-detail2.jpg"],
-        },
-        {
-          id: 2,
-          name: "Handwoven Textiles",
-          price: 49.99,
-          sellerName: "WeaveArt",
-          image: "textiles.jpg",
-          images: ["textiles.jpg", "textiles-detail1.jpg", "textiles-detail2.jpg"],
-        },
-        {
-          id: 3,
-          name: "Wooden Handcarvings",
-          price: 39.99,
-          sellerName: "CarvedCrafts",
-          image: "woodcarving.jpg",
-          images: ["woodcarving.jpg", "woodcarving-detail1.jpg", "woodcarving-detail2.jpg"],
-        },
-        {
-          id: 4,
-          name: "Handcrafted Pottery",
-          price: 25.99,
-          sellerName: "ArtisanCrafts",
-          image: "pottery.jpg",
-          images: ["pottery.jpg", "pottery-detail1.jpg", "pottery-detail2.jpg"],
-        },
-        {
-          id: 5,
-          name: "Handwoven Textiles",
-          price: 49.99,
-          sellerName: "WeaveArt",
-          image: "textiles.jpg",
-          images: ["textiles.jpg", "textiles-detail1.jpg", "textiles-detail2.jpg"],
-        },
-        {
-          id: 6,
-          name: "Wooden Handcarvings",
-          price: 39.99,
-          sellerName: "CarvedCrafts",
-          image: "woodcarving.jpg",
-          images: ["woodcarving.jpg", "woodcarving-detail1.jpg", "woodcarving-detail2.jpg"],
-        },
-        // Add more products as needed
-      ];
+ 
       
   const { id } = useParams();
 //   const [toBedisplayed, setToBedisplayed] = useState(0);
@@ -167,12 +118,12 @@ const ProductPage = () => {
             // key={mainProductData?.images[toBedisplayed]}
           >
           
-            <img src="" alt="" />
+            <img src={Products[0].img} alt="img" />
           </motion.div>
         </div>
         <div className="rightContainer">
-          <h1 className="title">Hello Shirt</h1>
-          <span className="price">2000</span>
+          <h1 className="title">{Products[0].name}</h1>
+          <span className="price">#{Products[0].price}</span>
          
           <hr />
           <p className="description">
@@ -198,7 +149,7 @@ const ProductPage = () => {
             <div className="addtocartproduct">Add to CArt</div>
           </div>
           <Link to='/newprofile/123'>
-          <small style={{fontWeight:'bold',fontStyle:'italic',color:'red'}}>Derek Stores</small>
+          <small style={{fontWeight:'bold',fontStyle:'italic',color:'red'}}>{Products[0].sellerName}</small>
           </Link>
         
           <div className="share">
@@ -218,14 +169,14 @@ const ProductPage = () => {
       <div className="description">
         <h1 className="title">Description</h1>
         <hr />
-        <p> </p>
+        <p> {Products[0]?.desc} </p>
       </div>
 
       <div className="relatedProducts">
         <h1 className="title">Related Products</h1>
         <hr />
         <div className="containe">
-          {products?.slice(0,10).map((product) => (
+          {Products?.slice(0,10).map((product) => (
             <Card item={product} key={product.id} />
           ))}
         </div> 

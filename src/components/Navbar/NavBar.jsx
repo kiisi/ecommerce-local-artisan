@@ -36,7 +36,10 @@ const NavBar = () => {
       <li>Contact</li>
     </ul>
     <div className="icons-link">
-      <BsBag />
+          <Link to='/cart'>
+          <BsBag />
+          </Link>
+     
       <AiOutlineSearch />
       <Link to='/login'>
        <BiUserCircle />

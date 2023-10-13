@@ -10,6 +10,8 @@ import NavContextProvider from "./contexts/NavContext";
 import Profile from "./pages/Profile";
 import ArtisanProfile from "./pages/NewProfile/ArtisanProfile";
 import ProductPage from "./pages/ProductPage/ProductPage";
+import CartPage from "./pages/CartPage/CartPage";
+import Footer from "./components/Footer/Footer";
 
 
 const Root = () => {
@@ -22,6 +24,7 @@ const Root = () => {
     <NavBar/>
       <ScrollRestoration />
       <Outlet />
+      <Footer/>
           </NavContextProvider>
     </>
   )
@@ -66,6 +69,11 @@ const router = createBrowserRouter([
       {
         path: "/product/:id",
         element: <ProductPage />
+      },
+      
+      {
+        path: "/cart",
+        element: <  CartPage />
       },
     ],
   },

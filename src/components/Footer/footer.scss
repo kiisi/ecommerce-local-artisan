@@ -1,0 +1,15 @@
+footer {
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-top: 1px solid #000;
+    gap: 10px;
+
+    @media (max-width: 767px) {
+
+        font-size: 15px;
+
+    }
+}
