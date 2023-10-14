@@ -5,7 +5,8 @@ import "./profile.scss";
 import ProductCard from '../../components/ProductCard/ProductCard'
 import Card from '../../components/SmallCard/Card'
 import { AiOutlineWhatsApp,AiOutlineFacebook ,AiOutlineInstagram,AiOutlineTwitter} from "react-icons/ai";
-import {Artisans, Products} from '../../utils/constants'
+import {Artisans, Products, reviews} from '../../utils/constants'
+import Review from "../../components/Reviews/Review";
 const ArtisanProfile = () => {
   
  
@@ -31,11 +32,17 @@ const ArtisanProfile = () => {
           <div className="contact">
             <AiOutlineWhatsApp/> <AiOutlineInstagram/> <AiOutlineTwitter/> <AiOutlineFacebook/>
           </div>
+          <div className="btns">
+          <button className="addProduct">Add a product</button>
+          <button className="addProduct">Edit Profile</button>
+          </div>
+         
         </div>
       </header>
     
+      <h2 className="title">Showcase Images</h2>
       <section className="gallery">
-      <h2>Showcase Images</h2>
+
 
         <div className="galleryMages">
           <div className="top">
@@ -90,9 +97,10 @@ const ArtisanProfile = () => {
 
 
 
+  <h2 className='title'>Customer Reviews</h2> 
       <section className="reviews">
-        <h2>Customer Reviews</h2>
-        {/* Customer reviews and testimonials go here */}
+      
+        {reviews.slice(0,8).map((review) => < Review review={review} key={review.id}/>)}
       </section>
 
     
