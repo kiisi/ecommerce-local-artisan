@@ -79,6 +79,34 @@
             }
           }
         }
+        .btns{
+          display: flex;
+          justify-content: space-between;
+          gap: 2%;
+          margin-top: 1rem;
+          button{
+            width: 48%;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            background: rgb(37, 37, 37);
+            color: white;
+            transition: all .3s ease-in-out;
+            cursor: pointer;
+            &:hover{
+             background: black;
+              // border: solid 1px black;
+              // color: black;
+              scale: (1.03);
+            }
+            @media (max-width: 767px) {
+            height: 35px;
+            font-size: 15px;
+                            }
+          }
+        }
     }
   
  
@@ -173,6 +201,9 @@ cursor: pointer;
   h2.title{
     font-size: 30px;
     margin: 4rem 2rem;
+    @media (max-width: 767px) {
+    font-size: 20px;
+                  }
   }
   .products {
   display: flex;
@@ -194,6 +225,11 @@ cursor: pointer;
   
   /* Reviews section styles */
   .reviews {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+    flex-wrap: wrap;
     /* Add styles for customer reviews and testimonials here */
   }
   

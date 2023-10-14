@@ -28,8 +28,10 @@
         font-weight: 400;
         text-align: center;
         @media (max-width: 767px) {
-          font-size: 10px;
-          font-weight: 300;
+          font-size: 12px;
+        //   font-weight: bold;
+      
+           font-weight: 500;
           
              }
     }
