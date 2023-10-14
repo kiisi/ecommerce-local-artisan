@@ -100,7 +100,7 @@ const ArtisanProfile = () => {
   <h2 className='title'>Customer Reviews</h2> 
       <section className="reviews">
       
-        {reviews.slice(0,8).map((review) => < Review review={review} key={review.id}/>)}
+        {reviews.slice(0,4).map((review) => < Review review={review} key={review.id}/>)}
       </section>
 
     
