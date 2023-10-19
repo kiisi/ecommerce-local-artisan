@@ -121,7 +121,7 @@ export  const  Products = [
     },
     {
       username: "Plumber",
-      userImage:"/assets/chef.jpg",
+      userImage:"/assets/plumber.jpg",
       description:
         "A decorative pottery vase with unique glazing and artistic detailing.",
    
