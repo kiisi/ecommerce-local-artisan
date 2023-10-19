@@ -92,7 +92,7 @@ export  const  Products = [
      {
       username: "Shoes",
       userImage:
-        "/assets/chef.jpg",
+        "/assets/shoes.jpg",
       description:
         "Shoes.",
     },
