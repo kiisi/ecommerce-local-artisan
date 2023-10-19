@@ -120,7 +120,7 @@ const Home = () => {
           <small className="btm">View Marketplace</small>
         </div>
         <div ref={imageRef} className="right">
-          <img src="/assets/lpage.png" alt="landingPage-Image" />
+          <img src="/assets/lpage.webp" alt="landingPage-Image" />
         </div>
       </section>
       <p
