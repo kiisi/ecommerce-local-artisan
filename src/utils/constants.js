@@ -106,7 +106,7 @@ export  const  Products = [
     
     {
       username: "Pastor",
-      userImage:"/assets/fashio.jpg",
+      userImage:"https://unsplash.com/photos/a-person-reading-a-book-d6AqeZqDGIA",
       description:
         "Pastor",
         wide: true,
