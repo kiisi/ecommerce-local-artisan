@@ -86,6 +86,7 @@ if (loading) return <Loader/>
             value={formData.email}
             onChange={handleChange}
             required={!currentUser}
+            readOnly={!!currentUser}
           />
         </div>
 

@@ -92,7 +92,7 @@ export  const  Products = [
      {
       username: "Shoes",
       userImage:
-        "/assets/chef.jpg",
+        "/assets/shoes.jpg",
       description:
         "Shoes.",
     },
@@ -106,7 +106,7 @@ export  const  Products = [
     
     {
       username: "Pastor",
-      userImage:"/assets/fashio.jpg",
+      userImage:"/assets/Pastor.jpg",
       description:
         "Pastor",
         wide: true,
@@ -121,7 +121,7 @@ export  const  Products = [
     },
     {
       username: "Plumber",
-      userImage:"/assets/chef.jpg",
+      userImage:"/assets/plumber.jpg",
       description:
         "A decorative pottery vase with unique glazing and artistic detailing.",
    
