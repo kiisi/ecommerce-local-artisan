@@ -94,7 +94,7 @@ export  const  Products = [
       userImage:
         "/assets/chef.jpg",
       description:
-        "Traditional handwoven Kente cloth with vibrant colors and intricate patterns.",
+        "Shoes.",
     },
     {
       username: "Tailor",
@@ -108,7 +108,7 @@ export  const  Products = [
       username: "Pastor",
       userImage:"/assets/fashio.jpg",
       description:
-        "A set of beautifully crafted beaded jewelry, including a necklace and earrings.",
+        "Pastor",
         wide: true,
       },
     {
@@ -116,7 +116,7 @@ export  const  Products = [
       userImage:
         "/assets/elec.jpg",
       description:
-        "A hand-carved wooden mask sculpture featuring traditional African designs.",
+        "Electrician.",
      
     },
     {
@@ -144,16 +144,16 @@ export  const  Products = [
     },
   ];
 
- export   const reviews = [
-    { author: 'User1',img:"/assets/shoe.jpg", rating: 4, content: 'Great product! I love it.' },
-    { author: 'User2',img:"/assets/shoe.jpg", rating: 5, content: 'Outstanding quality and value for money.' },
-    { author: 'User3',img:"/assets/shoe.jpg", rating: 3, content: 'Its okay, but could be better.' } ,
-    { author: 'User4',img:"", rating: 4, content: 'Im satisfied with my purchase.' } ,
-    { author: 'User5',img:"", rating: 5, content: 'Exceptional service and product.' },
-    { author: 'User6',img:"", rating: 2, content: 'Not impressed. Expected more.' },
-    { author: 'User7',img:"", rating: 4, content: 'Good product for the price.' },
-    { author: 'User8',img:"", rating: 5, content: 'Absolutely fantastic! I would highly recommend.' },
-    { author: 'User9',img:"", rating: 3, content: 'Decent, but has room for improvement.' },
-    { author: 'User10',img:"", rating: 4, content: 'I would buy it again.' }
-  ];
+//  export   const reviews = [
+//     { author: 'User1',img:"/assets/shoe.jpg", rating: 4, content: 'Great product! I love it.' },
+//     { author: 'User2',img:"/assets/shoe.jpg", rating: 5, content: 'Outstanding quality and value for money.' },
+//     { author: 'User3',img:"/assets/shoe.jpg", rating: 3, content: 'Its okay, but could be better.' } ,
+//     { author: 'User4',img:"", rating: 4, content: 'Im satisfied with my purchase.' } ,
+//     { author: 'User5',img:"", rating: 5, content: 'Exceptional service and product.' },
+//     { author: 'User6',img:"", rating: 2, content: 'Not impressed. Expected more.' },
+//     { author: 'User7',img:"", rating: 4, content: 'Good product for the price.' },
+//     { author: 'User8',img:"", rating: 5, content: 'Absolutely fantastic! I would highly recommend.' },
+//     { author: 'User9',img:"", rating: 3, content: 'Decent, but has room for improvement.' },
+//     { author: 'User10',img:"", rating: 4, content: 'I would buy it again.' }
+//   ];
   

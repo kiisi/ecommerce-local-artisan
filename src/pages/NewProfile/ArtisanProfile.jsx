@@ -15,7 +15,7 @@ import {
   AiOutlineClose,
   AiOutlineMessage,
 } from "react-icons/ai";
-import { Artisans, Products, reviews } from "../../utils/constants";
+import { Artisans, Products } from "../../utils/constants";
 import AddProductForm from "../../components/form/AddProductForm";
 import Review from "../../components/Reviews/Review";
 import { UserContext } from "../../contexts/userContext";

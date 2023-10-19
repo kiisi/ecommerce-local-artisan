@@ -58,6 +58,10 @@ const router = createBrowserRouter([
         element: <SearchPage />
       },
       {
+        path: "/login",
+        element: <Login />
+      },
+      {
         path: "/catpage/:id",
         element: <ArtisanPage />
       },
