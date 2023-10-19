@@ -1,15 +1,15 @@
 /* eslint-disable react/prop-types */
-import './card.scss'
+import { Link } from "react-router-dom";
+import "./card.scss";
 
-const Card = ({item}) => {
+const Card = ({ item ,link }) => {
   return (
-    <div className={`card ${item.wide ? 'wide' : 'norm'}`}>
-        <img src={item.image} alt="" />
-        <p className="name">
-            {item.name}
-        </p>
-    </div>
-  )
-}
+    <Link className={`card ${item.wide ? "wide" : "norm"}`} to={link}>
+      <img src={item?.userImage} alt="image-for-card" />
 
-export default Card
+      <p className="name">{item.username}</p>
+    </Link>
+  );
+};
+
+export default Card;

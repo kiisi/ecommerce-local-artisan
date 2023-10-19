@@ -44,6 +44,11 @@ a{
 
         div>* {
             cursor: pointer;
+            font-size: 23px;
+            transition:color .5s ease;
+            &:hover{
+                color:$sec-color;
+            }
         }
 
         .menu {
@@ -216,52 +221,7 @@ a{
         }
     }
 
-    footer {
-        padding: 1.5rem 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        border-top: 1px solid #000;
-        gap: 10px;
+  
 
-        @media (max-width: 767px) {
-
-            font-size: 15px;
-
-        }
-    }
-
-    .mobileScreen {
-        width: 99%;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        background: #000;
-        display: none;
-
-        color: white;
-        right: 0;
-        justify-content: center;
-        align-items: center;
-        @media (max-width: 767px) {
-display: flex;
-        }
-        ul {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-
-            li {
-
-                font-size: 30px;
-                width: fit-content;
-                transition: all .5s ease-in-out;
-                &:hover {
-                    border-bottom: solid 3px gray;
-                    cursor: pointer;
-                }
-            }
-        }
-    }
+  
 }

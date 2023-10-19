@@ -1,0 +1,87 @@
+$sec-color: #B20E10;
+
+nav {
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    height: 10vh;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 767px) {
+        width: 95%;
+    }
+
+    ul,
+    div {
+        display: flex;
+        gap: 20px;
+    }
+
+    ul {
+        @media (max-width: 767px) {
+            display: none;
+        }
+
+        li {
+            cursor: pointer;
+            transition:color .5s ease;
+            &:hover{
+                color:$sec-color;
+            }
+        }
+    }
+
+    div>* {
+        cursor: pointer;
+        font-size: 23px;
+        transition:color .5s ease;
+        &:hover{
+            color:$sec-color;
+        }
+    }
+
+    .menu {
+        display: none;
+        cursor: pointer;
+
+        @media (max-width: 767px) {
+            display: flex;
+            font-size: 20px;
+        }
+
+    }
+}
+
+.mobileScreen {
+    width: 99%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background: #000;
+    display: none;
+z-index: 99;
+    color: white;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+    @media (max-width: 767px) {
+display: flex;
+    }
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        li {
+
+            font-size: 30px;
+            width: fit-content;
+            transition: all .5s ease-in-out;
+            &:hover {
+                border-bottom: solid 3px gray;
+                cursor: pointer;
+            }
+        }
+    }
+}
