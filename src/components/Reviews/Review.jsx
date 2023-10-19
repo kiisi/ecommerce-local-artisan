@@ -18,10 +18,10 @@ const Review = ({ review }) => {
   return (
     <div className="review">
       <div className="imageC">
-      {review.img && (
-        <img src={review.img} alt={review.author} className="author-image" />
+      {review.userImage && (
+        <img src={review.userImage} alt={review.username} className="author-image" />
       )}
-      <h3>{review.author}</h3>
+      <h3>{review?.username}</h3>
       </div>
      
      
@@ -30,8 +30,8 @@ const Review = ({ review }) => {
           <FaStar key={index} color="#ffc107" />
         ))} 
       </div> */}
-      <p>{review.content}</p>
-      <StarRating rating={review.rating} />
+      <p>{review.description}</p>
+      <StarRating rating={review.star} />
     </div>
   );
 };

@@ -8,6 +8,8 @@ import {
   AiOutlineCopyright,
 } from "react-icons/ai";
 // import { NavContext } from "../contexts/NavContext"
+import { useQuery } from "@tanstack/react-query";
+import newRequest from "../../utils/newRequest";
 import { IoShirtOutline } from "react-icons/io5";
 import { RiSecurePaymentLine, RiCustomerService2Fill } from "react-icons/ri";
 import { BiUserCircle } from "react-icons/bi";
@@ -19,11 +21,50 @@ import { Link } from "react-router-dom";
 import { NavContext } from "../../contexts/NavContext";
 import { ArtisanProducts, Artisans, Products } from "../../utils/constants";
 import ProductCard from "../../components/ProductCard/ProductCard";
+import ProductCard2 from "../../components/ProductCard2/ProductCard2";
 const Home = () => {
   const clippy = useRef();
   const imageRef = useRef();
   const {menu, setMenu} = useContext(NavContext)
-
+  const {
+    isLoading: isLoadingHighestStars,
+    error: highestStarsError,
+    data: highestStarsData,
+    refetch: highestStarsReFetch,
+  } = useQuery({
+    queryKey: ['usersByStars', 'highest'],
+    queryFn: () =>
+      newRequest.get(`/users?sort=highest_stars`).then((res) => {
+        return res.data;
+      }),
+  });
+  
+  const {
+    isLoading: isLoadingLatestProducts,
+    error: latestProductsError,
+    data: latestProductsData,
+    refetch: latestProductsReFetch,
+  } = useQuery({
+    queryKey: ['productsByLatest', 'latest'],
+    queryFn: () =>
+      newRequest.get(`/products?sort=latest`).then((res) => {
+        return res.data;
+      }),
+  });
+  const {
+    isLoading: isLoadingHighestRatedProducts,
+    error: highestRatedProductsError,
+    data: highestRatedProductsData,
+    refetch: highestRatedProductsReFetch,
+  } = useQuery({
+    queryKey: ['productsByHighestRated', 'highestRated'],
+    queryFn: () =>
+      newRequest.get(`/products?sort=highestRated`).then((res) => {
+        return res.data;
+      },
+    ),
+  });
+  
   useEffect(() => {
     const timeline = gsap.timeline();
 
@@ -123,15 +164,45 @@ const Home = () => {
       </p>
       <section className="popularCat">
         {ArtisanProducts.map((item) => (
-          <Card item={item} link='/catpage/123' key={item.description} />
+          <Card item={item} link={`/catpage/${item.username}`} key={item.description} />
         ))}
       </section>
-      <h2 className="title">Products For You</h2>
-      <section className="products">
-    
-        {
+       <h2 className="title">Popular Products For You</h2>
+       <section className="products">
+      {isLoadingHighestRatedProducts
+          ? "Loading"
+          : highestRatedProductsError
+          ? "An Error Occurred"
+          : highestRatedProductsData?.length === 0
+          ?  "No User yet. Register" : highestRatedProductsData?.map((product) => (
+              <ProductCard
+                link={`/product/${product?._id}`}
+                key={product.id}
+                item={product}
+              />
+            ))}
+        {/* {
         Products.map((item) => (<ProductCard link='/product/123' key={item.id} item={item} />))
-        }
+        } */}
+        {/* Product listings and categories go here */}
+      </section>
+      <h2 className="title">Latest Products For You</h2>
+      <section className="products">
+      {isLoadingLatestProducts
+          ? "Loading"
+          : latestProductsError
+          ? "An Error Occurred"
+          : latestProductsData?.length === 0
+          ?  "No User yet. Register" : latestProductsData?.map((product) => (
+              <ProductCard
+                link={`/product/${product?._id}`}
+                key={product.id}
+                item={product}
+              />
+            ))}
+        {/* {
+        Products.map((item) => (<ProductCard link='/product/123' key={item.id} item={item} />))
+        } */}
         {/* Product listings and categories go here */}
       </section>
 
@@ -142,9 +213,21 @@ const Home = () => {
         Popular Artisans
       </p>
       <section className="popularCat">
-        {Artisans.map((item) => (
+        {/* {Artisans.map((item) => (
           <Card item={item} link='newprofile/23' key={item.description} />
-        ))}
+        ))} */}
+          {isLoadingHighestStars
+          ? "Loading"
+          : highestStarsError
+          ? "An Error Occurred"
+          : highestStarsData?.length === 0
+          ?  "No User yet. Register" : highestStarsData?.map((product) => (
+              <ProductCard2
+                link={`/newprofile/${product?._id}`}
+                key={product.id}
+                item={product}
+              />
+            ))}
       </section>
       <div className="perContainer">
         <div>
