@@ -83,46 +83,64 @@ export  const  Products = [
 
  export  const ArtisanProducts = [
     {
-      name: "Chef",
-      img:
+      username: "Chef",
+      userImage:
+        "/assets/chef.jpg",
+      description:
+        "Traditional handwoven Kente cloth with vibrant colors and intricate patterns.",
+    },
+     {
+      username: "Shoes",
+      userImage:
         "/assets/chef.jpg",
       description:
         "Traditional handwoven Kente cloth with vibrant colors and intricate patterns.",
     },
     {
-      name: "Tailor",
-      img:"/assets/fashio.jpg",
+      username: "Tailor",
+      userImage:"/assets/fashio.jpg",
       description:
         "A set of beautifully crafted beaded jewelry, including a necklace and earrings.",
-    },
+        wide: true,
+      },
+    
     {
-      name: "Electrician",
-      img:
+      username: "Pastor",
+      userImage:"/assets/fashio.jpg",
+      description:
+        "A set of beautifully crafted beaded jewelry, including a necklace and earrings.",
+        wide: true,
+      },
+    {
+      username: "Electrician",
+      userImage:
         "/assets/elec.jpg",
       description:
         "A hand-carved wooden mask sculpture featuring traditional African designs.",
-      wide: true,
+     
     },
     {
-      name: "Plumber",
-      img:"/assets/chef.jpg",
+      username: "Plumber",
+      userImage:"/assets/chef.jpg",
       description:
         "A decorative pottery vase with unique glazing and artistic detailing.",
-      wide: true,
+   
     },
     {
-      name: "Carpenter",
-      img:
+      username: "Carpenter",
+      userImage:
         "/assets/carp.jpg",
       description:
         "Colorful batik print fabric, perfect for traditional clothing or home decor.",
-    },
+        wide: true,
+      },
     {
-      name: "HairDresser",
-      img:
+      username: "HairDresser",
+      userImage:
         "/assets/hair2.jpg",
       description:
         "Hand-stitched leather wallet with multiple compartments for functionality.",
+        wide: true,
     },
   ];
 

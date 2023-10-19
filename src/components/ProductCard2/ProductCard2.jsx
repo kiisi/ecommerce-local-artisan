@@ -2,16 +2,16 @@
 import { Link } from "react-router-dom";
 import "./card.scss";
 
-const ProductCard = ({ item ,link}) => {
+const ProductCard2 = ({ item ,link}) => {
   return (
     <Link className={`pcard`} to={link}>
-      <img src={item.coverImage} alt="" />
+      <img src={item.userImage} alt="" />
 
       <p className="name">{item.username}</p>
-      <p className="price">#{item.price}</p>
+      <p className="price">{item.price}</p>
 
     </Link>
   );
 };
 
-export default ProductCard;
+export default ProductCard2;
