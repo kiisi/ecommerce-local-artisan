@@ -17,8 +17,9 @@ import { NavContext } from "../../contexts/NavContext";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../contexts/userContext";
-
+import { CartContext } from "../../contexts/CartContext";
 const NavBar = () => {
+  const { cart, setCart } = useContext(CartContext);
   const { currentUser, logoutUser } = useContext(UserContext);
   const staticImg =
     "https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375_960_720.png";
@@ -42,7 +43,10 @@ const NavBar = () => {
         </ul>
         <div className="icons-link">
           <Link to="/cart">
-            <BsBag />
+            <div className="cart">
+              <span>{cart.length}</span>
+              <BsBag className="shopIcon" />
+            </div>
           </Link>
           <Link to="/search">
             <AiOutlineSearch />

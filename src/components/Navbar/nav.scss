@@ -39,6 +39,25 @@ nav {
         &:hover{
             color:$sec-color;
         }
+         .cart{
+    position: relative;
+    span{
+        font-size: 10px;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: red;
+        border-radius: 50%;
+        position: absolute;
+        top: -40%;
+        right: -50%;
+    }
+    .shopIcon{
+        position: relative;
+    }
+   }
     }
 
     .menu {
