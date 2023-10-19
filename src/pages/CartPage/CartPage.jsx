@@ -2,53 +2,53 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useEffect, useState } from "react";
  import "./cartpage.scss";
-// import { ToastContainer, toast } from 'react-toastify';
-//   import 'react-toastify/dist/ReactToastify.css';
-// import { CartContext } from "../../contexts/CartContext";
-import { AiOutlineClose, AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
+ import { ToastContainer, toast } from 'react-toastify';
+   import 'react-toastify/dist/ReactToastify.css';
+ import { CartContext } from "../../contexts/CartContext";
+import { AiOutlineClose,  } from "react-icons/ai";
 import { Link } from "react-router-dom";
 const CartPage = () => {
    const [subTotal, setSubTotal] = useState(0)
   const arr = [1, 2, 3, 4, 5];
-  // const { cart, setCart } = useContext(CartContext);
-  // useEffect(() => {
-  //   setSubTotal (
-  //     cart.reduce((acc,curr) => acc + Number(curr.price * curr.qty) ,0 ))
-  //  }, [cart])
+   const { cart, setCart } = useContext(CartContext);
+   useEffect(() => {
+     setSubTotal (
+       cart.reduce((acc,curr) => acc + Number(curr.price * curr.qty) ,0 ))
+    }, [cart])
   
-  // const handleCartItemDelete = (product) => {
-  //   const filteredCart = cart.filter((item) => item._id !== product._id);
+   const handleCartItemDelete = (product) => {
+     const filteredCart = cart.filter((item) => item._id !== product._id);
 
-  //   setCart(filteredCart);
-  //   toast.info('Item removed from cart  Succesfully!', {
-  //     position: toast.POSITION.BOTTOM_LEFT,
-  //     autoClose: 5000,
-  //     hideProgressBar: false,
-  //     closeOnClick: true,
-  //     pauseOnHover: true,
-  //     draggable: true,
-  //     progress: undefined,
-  //     theme: "colored",
-  //     });
-  // };
-  // const handleIncreaseCartQty = (product) => {
-  //   console.log("clicked");
-  //   setCart((prevState) =>
-  //     prevState.map((item) =>
-  //       item._id === product._id ? { ...item, qty: item.qty + 1 } : item
-  //     )
-  //   );
-  // };
-  // const handleDecreaseCartQty = (product) => {
-  //   console.log("clicked");
-  //   setCart((prevState) =>
-  //     prevState.map((item) =>
-  //       item._id === product._id
-  //         ? { ...item, qty: item.qty === 1 ? item.qty : item.qty - 1 }
-  //         : item
-  //     )
-  //   );
-  // };
+     setCart(filteredCart);
+     toast.info('Item removed from cart  Succesfully!', {
+       position: toast.POSITION.BOTTOM_LEFT,
+       autoClose: 5000,
+       hideProgressBar: false,
+       closeOnClick: true,
+       pauseOnHover: true,
+       draggable: true,
+       progress: undefined,
+       theme: "colored",
+       });
+   };
+   const handleIncreaseCartQty = (product) => {
+     console.log("clicked");
+     setCart((prevState) =>
+       prevState.map((item) =>
+         item._id === product._id ? { ...item, qty: item.qty + 1 } : item
+       )
+     );
+   };
+   const handleDecreaseCartQty = (product) => {
+     console.log("clicked");
+     setCart((prevState) =>
+       prevState.map((item) =>
+         item._id === product._id
+           ? { ...item, qty: item.qty === 1 ? item.qty : item.qty - 1 }
+           : item
+       )
+     );
+   };
   const CartItem = ({ product }) => (
     <div className="cartItem">
       <div className="imgContainer">
@@ -62,7 +62,7 @@ const CartPage = () => {
         <span>Quantity:</span>
           <button
             className="qty"
-            // onClick={() => handleDecreaseCartQty(product)}
+             onClick={() => handleDecreaseCartQty(product)}
           >
             -
            
@@ -70,7 +70,7 @@ const CartPage = () => {
           <span className="qty1"> 1</span>{" "}
           <button
             className="qty"
-            // onClick={() => handleIncreaseCartQty(product)}
+             onClick={() => handleIncreaseCartQty(product)}
           >
           +
           </button>
@@ -79,7 +79,7 @@ const CartPage = () => {
           <p className="wishlist">
             <span>Made it to cart</span>
             <div
-              // onClick={() => handleCartItemDelete(product)}
+               onClick={() => handleCartItemDelete(product)}
               className="remove"
             >
               <AiOutlineClose />
@@ -94,7 +94,7 @@ const CartPage = () => {
         <span>Quantity:</span>
           <button
             className="qty"
-            // onClick={() => handleDecreaseCartQty(product)}
+             onClick={() => handleDecreaseCartQty(product)}
           >
             -
            
@@ -102,7 +102,7 @@ const CartPage = () => {
           <span className="qty1"> {product?.qty}</span>{" "}
           <button
             className="qty"
-            // onClick={() => handleIncreaseCartQty(product)}
+            onClick={() => handleIncreaseCartQty(product)}
           >
           +
           </button>
@@ -113,15 +113,15 @@ const CartPage = () => {
 
   return (
     <div className="cartpagecontainer">
-           {/* <ToastContainer /> */}
+           <ToastContainer /> 
       <div className="cartContainer">
-       {/* {cart.length!==0 ? (cart?.map((item) => (
+        {cart.length!==0 ? (cart?.map((item) => (
           <CartItem product={item} key={item._id} />
         )) ): <div>
-           <p>Nothing to show, please add products to cart</p>
+           <p >Nothing to show, please add products to cart</p>
            <Link className="" to='/' >Go home</Link>
           </div>
-} */}
+} 
       </div>
       <div className="summary">
         <h1 className="titlesummary">Order Summary</h1>
@@ -134,12 +134,12 @@ const CartPage = () => {
             <hr />
             <div className="tax">
               <h1 className="stax">Tax:</h1>
-              {/* <span>#{ Math.round( 0.1 * subTotal)}</span> */}
+               <span>#{ Math.round( 0.1 * subTotal)}</span> 
             </div>
             <hr />
             <div className="total">
               <h1 className="stotal">Total:</h1>
-            {/* <span>#{Math.round((0.1 * subTotal) + subTotal)}</span> */}
+            <span>#{Math.round((0.1 * subTotal) + subTotal)}</span> 
             </div>
             <button>Checkout</button>
           </div>

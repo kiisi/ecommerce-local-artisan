@@ -15,7 +15,7 @@ $sec-color: #B20E10;
     }
 
     .cartContainer {
-        flex: 0 0 70%;
+        flex: 0 0 60%;
         display: flex;
         flex-direction: column;
         gap: 20px;
@@ -227,7 +227,10 @@ justify-content: space-between;
     .summary {
         flex: 0 0 30%;
         height: 100%;
-
+.titlesummary{
+font-size: 20px;
+margin-bottom: 2rem;
+}
         .summaryContainer {
             width: 100%;
             height: max-content;
@@ -268,6 +271,10 @@ justify-content: space-between;
                     justify-content: center;
                     font-weight: bolder;
                     cursor: pointer;
+                    transition: background .4s ease-in-out;
+                    &:hover{
+                        background: rgb(168, 74, 74);
+                    }
                 }
             }
         }
