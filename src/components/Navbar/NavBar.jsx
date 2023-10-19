@@ -29,11 +29,13 @@ const NavBar = () => {
   return (
     <>
       <nav className="nav-Container">
-        <img src="" alt="logoImage" className="log" />
+        <Link to="/">
+        <img src="https://i.pinimg.com/736x/08/40/c9/0840c9ad748d1008cb0f45a47a71c06f.jpg" alt="logoImage" className="log" />
+        </Link>
         <ul>
-          <Link to="/">
+          {/* <Link to="/">
             <li>Home</li>
-          </Link>
+          </Link> */}
           <li>Contact</li>
           {/* <Link to="/newprofile">
             <li>Artisans</li>
