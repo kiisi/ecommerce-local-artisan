@@ -3,7 +3,7 @@
 /* eslint-disable no-undef */
 import React from 'react';
 import { FaStar } from 'react-icons/fa';
-import { reviews } from '../../utils/constants';
+// import { reviews } from '../../utils/constants';
 import './review.scss'
 
 

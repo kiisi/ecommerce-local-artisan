@@ -12,9 +12,15 @@
     padding: 10px;
     width: 23%;
     margin-bottom: 2%;
-    
+    box-shadow: -4px -1px 33px 0px rgba(0,0,0,0.51);
+-webkit-box-shadow: -4px -1px 33px 0px rgba(0,0,0,0.51);
+-moz-box-shadow: -4px -1px 33px 0px rgba(0,0,0,0.51);
+transition: scale .4s ease-in-out;
+&:hover{
+    scale: (0.9);
+}
      @media (max-width: 767px) {
-         width: 30%;
+         width: 45%;
           height: 200px;
              }
     img{

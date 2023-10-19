@@ -19,12 +19,14 @@ import { useContext } from "react";
 import { Navigate } from "react-router-dom"; // Import Navigate
 import SearchPage from "./pages/SearchPage/SearchPage";
 
+import CartContextProvider from "./contexts/CartContext";
 const Root = () => {
   const queryClient = new QueryClient();
   // const { currentUser, logoutUser } = useContext(UserContext);
 
   return (
     <>
+     <CartContextProvider>
       <UserContextProvider> {/* Make sure UserContextProvider wraps the entire application */}
         <NavContextProvider>
           <QueryClientProvider client={queryClient}>
@@ -35,6 +37,7 @@ const Root = () => {
           </QueryClientProvider>
         </NavContextProvider>
       </UserContextProvider>
+      </CartContextProvider>
     </>
   );
 }
@@ -56,6 +59,10 @@ const router = createBrowserRouter([
       {
         path: "/search",
         element: <SearchPage />
+      },
+      {
+        path: "/login",
+        element: <Login />
       },
       {
         path: "/catpage/:id",

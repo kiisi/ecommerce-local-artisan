@@ -106,40 +106,7 @@ const Home = () => {
 
   return (
     <div className="main-Container">
-      {/* <nav className="nav-Container">
-        <img src="" alt="logoImage" className="log" />
-        <ul>
-          <li>Home</li>
-          <li>Contact</li>
-          <li>Artisans</li>
-          <li>Products</li>
-        </ul>
-        <div className="icons-link">
-          <BsBag />
-          <AiOutlineSearch />
-          <Link to='/login'>
-           <BiUserCircle />
-          </Link>
-         
-        </div>
-
-        <div className="menu">
-          {!menuOpen ? (
-            <AiOutlineMenu onClick={() => setMenuOpen(!menuOpen)} />
-          ) : (
-            <AiOutlineClose
-              style={{
-                position: "fixed",
-                top: "3vh",
-                right: "1rem",
-                color: "white",
-                zIndex: "999",
-              }}
-              onClick={() => setMenuOpen(!menuOpen)}
-            />
-          )}
-        </div>
-      </nav> */}
+  
       <section className="home-Container">
         <div ref={clippy} className="left">
           <small>artisans hub</small>
@@ -153,7 +120,7 @@ const Home = () => {
           <small className="btm">View Marketplace</small>
         </div>
         <div ref={imageRef} className="right">
-          <img src="/assets/lpage.png" alt="landingPage-Image" />
+          <img src="/assets/lpage.webp" alt="landingPage-Image" />
         </div>
       </section>
       <p
@@ -196,7 +163,7 @@ const Home = () => {
           ?  "No User yet. Register" : latestProductsData?.map((product) => (
               <ProductCard
                 link={`/product/${product?._id}`}
-                key={product.id}
+                key={latestProductsData._id}
                 item={product}
               />
             ))}
