@@ -106,15 +106,16 @@ const ProductPage = () => {
       });
     }
   };
-  // const thistProductQty = cart.map(item => {
-  //   if (item._id===mainProductData._id) {
-  //     if (item.qty) {
-  //       return item.qty
-  //     }
-  //     else return null
-  //   }
-  //  else return null
-  // })
+   const thistProductQty = cart.map(item => {
+    if (item._id===mainProductData._id) {
+      if (item.qty) {
+   
+             return item.qty
+     }
+      else return null
+   }
+    else return null
+   })
   // console.log(thistProductQty)
   if (isLoading || !id) return <Loader />;
   return (
@@ -147,7 +148,7 @@ const ProductPage = () => {
               >
                 -{" "}
               </p>
-              <p> {newqty} </p>
+              <p> {newqty || thistProductQty} </p>
 
               <p
                 onClick={() => handleIncreaseCartQty(mainProductData)}
