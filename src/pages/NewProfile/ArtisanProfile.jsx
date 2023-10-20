@@ -19,6 +19,7 @@ import { Artisans, Products } from "../../utils/constants";
 import AddProductForm from "../../components/form/AddProductForm";
 import Review from "../../components/Reviews/Review";
 import { UserContext } from "../../contexts/userContext";
+import Loader from "../../components/Loader/Loader";
 const ArtisanProfile = () => {
   const { currentUser, logoutUser } = useContext(UserContext);
   const { id } = useParams();
@@ -67,7 +68,7 @@ const ArtisanProfile = () => {
       }),
   });
   console.log(userCatData);
-
+if (!userData ) return <Loader/>
   return (
     <div className="artisan-profile">
       <header>
