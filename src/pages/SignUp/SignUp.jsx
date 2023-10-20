@@ -243,9 +243,9 @@ const SignUp = () => {
                   onChange={(e) => setCategory(e.target.value)}
                 >
                   <option value="">Select Artisan Category</option>
-                  <option value="Shirts">Carpentery</option>
+                  <option value="Carpentery">Carpentery</option>
                   <option value="Tailoring">Tailoring</option>
-                  <option value="Trousers">Furniture</option>
+                  <option value="Furniture">Furniture</option>
                   <option value="Electrician">Electrician</option>
                   <option value="Plumber">Plumber</option>
                   <option value="Hair-Dressing">Hair Dressing</option>
