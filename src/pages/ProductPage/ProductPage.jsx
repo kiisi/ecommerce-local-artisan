@@ -211,7 +211,7 @@ const ProductPage = () => {
         <hr />
         <div className="containe">
           {relatedProductsData?.slice(0, 10).map((product) => (
-            <Card item={product} key={product.id} />
+            <Card item={product} link={`/product/${product._id}`} key={product.id} />
           ))}
         </div>
       </div>
