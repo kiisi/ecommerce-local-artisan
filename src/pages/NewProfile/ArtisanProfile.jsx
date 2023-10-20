@@ -82,8 +82,7 @@ const ArtisanProfile = () => {
           <section className="bio">
             <h2>About Me</h2>
             <p>
-              Vibrant lover of tailoring senator material to customers taste a
-              100 percent
+              {userData?.description}
             </p>
           </section>
           <div className="contact">

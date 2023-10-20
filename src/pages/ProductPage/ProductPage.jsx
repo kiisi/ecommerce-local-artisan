@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect,useState } from "react";
 import "./product.scss";
 import {
   AiOutlineFacebook,
@@ -35,6 +35,17 @@ const ProductPage = () => {
     queryFn: () =>
       newRequest.get(`/products/single/${id}`).then((res) => res.data),
   });
+   useEffect(() => {
+    // Update the quantity when the main product data changes
+    if (mainProductData) {
+      const cartItem = cart.find((item) => item._id === mainProductData._id);
+      if (cartItem) {
+        setQty(cartItem.qty);
+      } else {
+        return
+      }
+    }
+  }, [mainProductData, cart]);
   // console.log(mainProductData);
   // Fetch related products with the same category as the main product
   const { data: relatedProductsData } = useQuery({
@@ -106,16 +117,16 @@ const ProductPage = () => {
       });
     }
   };
-   const thistProductQty = cart.map(item => {
-    if (item._id===mainProductData._id) {
-      if (item.qty) {
+  //  const thistProductQty = cart.map(item => {
+  //   if (item._id===mainProductData._id) {
+  //     if (item.qty) {
    
-             return item.qty
-     }
-      else return null
-   }
-    else return null
-   })
+  //            return item.qty
+  //    }
+  //     else return null
+  //  }
+  //   else return null
+  //  })
   // console.log(thistProductQty)
   if (isLoading || !id) return <Loader />;
   return (
