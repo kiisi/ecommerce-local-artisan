@@ -148,7 +148,7 @@ const ProductPage = () => {
               >
                 -{" "}
               </p>
-              <p> {newqty || thistProductQty} </p>
+              <p> {newqty} </p>
 
               <p
                 onClick={() => handleIncreaseCartQty(mainProductData)}
