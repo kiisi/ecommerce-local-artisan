@@ -7,7 +7,7 @@ const ProductCard = ({ item ,link}) => {
     <Link className={`pcard2`} to={link}>
       <img src={item.coverImage} alt="" />
 
-      <p className="name">{item.username.slice(0,15)}</p>
+      <p className="name">{item.title.slice(0,15)}</p>
       <p className="price">#{item.price}</p>
 
     </Link>
