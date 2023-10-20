@@ -244,11 +244,12 @@ const SignUp = () => {
                 >
                   <option value="">Select Artisan Category</option>
                   <option value="Shirts">Carpentery</option>
-                  <option value="Shoes">Tailoring</option>
+                  <option value="Tailoring">Tailoring</option>
                   <option value="Trousers">Furniture</option>
                   <option value="Electrician">Electrician</option>
                   <option value="Plumber">Plumber</option>
                   <option value="Hair-Dressing">Hair Dressing</option>
+                  <option value="Shoes">Shoes</option>
                   <option value="Others">Others</option>
                 </select>
               )}
