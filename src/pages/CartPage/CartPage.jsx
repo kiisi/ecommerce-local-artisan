@@ -67,7 +67,9 @@ const CartPage = () => {
             -
            
           </button>{" "}
+<<
           <span className="qty1">{product?.qty} 🤝</span>{" "}
+>>
           <button
             className="qty"
              onClick={() => handleIncreaseCartQty(product)}
