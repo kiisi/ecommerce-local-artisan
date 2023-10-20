@@ -77,7 +77,7 @@ const ArtisanProfile = () => {
         <div className="right">
           <h1 style={{
       display:"flex", alignItems:"center"
-          }}{userData?.username} <img style={{ width:"20px", height:"20px", objectPostion:"cover"}} src="/assets/verified.jpg" alt="verified" /> </h1>
+          }}>{userData?.username} <img style={{ width:"20px", height:"20px", objectPostion:"cover"}} src="/assets/verified.jpg" alt="verified" /> </h1>
           <p>{userData?.location}</p>
           <section className="bio">
             <h2>About Me</h2>
