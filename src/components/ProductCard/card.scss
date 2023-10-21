@@ -4,9 +4,9 @@
     display: flex;
     width: 23%;
     flex-direction: column;
-    margin-bottom: 2%;
+    
     @media (max-width: 767px) {
-            
+            margin-bottom: 20px;
         width: 45%;
          height: 200px;
             }
