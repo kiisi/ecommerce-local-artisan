@@ -135,9 +135,17 @@ export  const  Products = [
         wide: true,
       },
     {
-      username: "HairDresser",
+      username: "Hair-Dressing",
       userImage:
         "/assets/hair2.jpg",
+      description:
+        "Hand-stitched leather wallet with multiple compartments for functionality.",
+        wide: true,
+    },
+     {
+      username: "Others",
+      userImage:
+        "/assets/find.png",
       description:
         "Hand-stitched leather wallet with multiple compartments for functionality.",
         wide: true,

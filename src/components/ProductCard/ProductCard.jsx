@@ -24,7 +24,7 @@ const ProductCard = ({ item ,link}) => {
   
   const handleDelete = async (id) => {
    try {
-    // console.log(id)
+    // // console.log(id)
    const res =  newRequest.delete(`/products/${id}`).then((res) => res.data)
    toast.success("Deleted successful ,wait a bit", {
     position: "top-left",
