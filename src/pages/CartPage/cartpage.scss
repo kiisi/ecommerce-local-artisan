@@ -1,7 +1,7 @@
 $sec-color: #B20E10;
 .cartpagecontainer {
     margin-top: 10vh;
-    padding: 3rem 3rem;
+    padding: 3rem 0.5rem;
     height: fit-content;
     min-height: 100vh;
     display: flex;
@@ -15,7 +15,7 @@ $sec-color: #B20E10;
     }
 
     .cartContainer {
-        flex: 0 0 60%;
+        flex: 1;
         display: flex;
         flex-direction: column;
         gap: 20px;
@@ -107,7 +107,11 @@ justify-content: space-between;
                         font-weight: 200;
                         text-transform: capitalize;
 
-                        @media (max-width:700px) {
+                        @media (max-width:950px) {
+                            font-size: 22px;
+                            font-weight: 300;
+                        }
+                        @media (max-width:767px) {
                             font-size: 12px;
                             font-weight: 300;
                         }
@@ -225,7 +229,7 @@ justify-content: space-between;
     }
 
     .summary {
-        flex: 0 0 30%;
+       width: 250px;
         height: 100%;
 .titlesummary{
 font-size: 20px;

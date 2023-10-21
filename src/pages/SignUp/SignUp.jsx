@@ -18,6 +18,7 @@ const SignUp = () => {
   const [username, setUsername] = useState("");
   const [category, setCategory] = useState("");
   const [firstname, setFirstname] = useState("");
+  const [description, setdescription] = useState("");
   const [lastname, setLastname] = useState("");
   const [location, setLocation] = useState("");
   const [password, setPassword] = useState("");
@@ -29,7 +30,7 @@ const SignUp = () => {
   const handleSignUp = async (e) => {
     e.preventDefault();
     // Handle sign-up logic here
-    console.log(email, username, firstname, lastname, password, isSeller);
+    // console.log(email, username, firstname, lastname, password, isSeller);
     const url = await upload(userImage);
     try {
       setLoading(true);
@@ -42,6 +43,7 @@ const SignUp = () => {
         category,
         isSeller,
         location,
+        description,
         userImage: url,
       });
       navigate("/login");
@@ -241,12 +243,13 @@ const SignUp = () => {
                   onChange={(e) => setCategory(e.target.value)}
                 >
                   <option value="">Select Artisan Category</option>
-                  <option value="Shirts">Carpentery</option>
-                  <option value="Shoes">Tailoring</option>
-                  <option value="Trousers">Furniture</option>
+                  <option value="Carpentery">Carpentery</option>
+                  <option value="Tailoring">Tailoring</option>
+                  <option value="Furniture">Furniture</option>
                   <option value="Electrician">Electrician</option>
                   <option value="Plumber">Plumber</option>
                   <option value="Hair-Dressing">Hair Dressing</option>
+                  <option value="Shoes">Shoes</option>
                   <option value="Others">Others</option>
                 </select>
               )}
@@ -261,6 +264,7 @@ const SignUp = () => {
             <input type="checkbox" value="" />
             <span>Keep me logged in</span>
           </div> */}
+          <textarea placeholder='Énter short decription' style={{padding:'10px'}} name="desc" id="desc" cols="5" rows="5" onChange={e=> setdescription(e.target.value)}></textarea>
               <button disabled={password !== confirmPassword} type="submit">
                 Sign Up
               </button>

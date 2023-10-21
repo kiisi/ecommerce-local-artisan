@@ -19,6 +19,7 @@ import { Artisans, Products } from "../../utils/constants";
 import AddProductForm from "../../components/form/AddProductForm";
 import Review from "../../components/Reviews/Review";
 import { UserContext } from "../../contexts/userContext";
+import Loader from "../../components/Loader/Loader";
 const ArtisanProfile = () => {
   const { currentUser, logoutUser } = useContext(UserContext);
   const { id } = useParams();
@@ -67,7 +68,7 @@ const ArtisanProfile = () => {
       }),
   });
   console.log(userCatData);
-
+if (!userData ) return <Loader/>
   return (
     <div className="artisan-profile">
       <header>
@@ -82,8 +83,7 @@ const ArtisanProfile = () => {
           <section className="bio">
             <h2>About Me</h2>
             <p>
-              Vibrant lover of tailoring senator material to customers taste a
-              100 percent
+              {userData?.description}
             </p>
           </section>
           <div className="contact">
