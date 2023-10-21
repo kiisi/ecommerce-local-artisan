@@ -142,7 +142,7 @@ const ProductPage = () => {
             transition={{ duration: 0.5 }}
             key={mainProductData?.images[toBedisplayed]}
           >
-            <img src={mainProductData?.coverImage} alt="img" />
+            <img src={mainProductData?.images[toBedisplayed]} alt="img" />
           </motion.div>
         </div>
         <div className="rightContainer">
