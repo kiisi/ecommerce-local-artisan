@@ -36,8 +36,21 @@ const ProductCard = ({ item ,link}) => {
     progress: undefined,
     theme: "colored",
   });
+  window.location.reload();
    } catch (error) {
     console.log(error)
+    if(error){
+      toast.error("Error Deleting this product ,Try again or leave am", {
+        position: "top-left",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+    }
    } 
   }
   return (

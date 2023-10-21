@@ -7,6 +7,9 @@ import newRequest from "../../utils/newRequest";
 import { Link, useParams } from "react-router-dom";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import Card from "../../components/SmallCard/Card";
+import { ToastContainer, toast } from "react-toastify";
+// import { useLocation } from 'react-router-dom';
+import "react-toastify/dist/ReactToastify.css";
 import {
   AiOutlineWhatsApp,
   AiOutlineFacebook,
@@ -71,6 +74,7 @@ const ArtisanProfile = () => {
   if (!userData) return <Loader />;
   return (
     <div className="artisan-profile">
+      <ToastContainer/>
       <header>
         <div className="left">
           <img src={userData?.userImage} alt="Artisan's Profile" />
