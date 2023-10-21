@@ -28,6 +28,7 @@ We welcome contributions from artisans and enthusiasts alike. If you're interest
 If you have any questions, feedback, or need support, please contact us at [contact@cotisan.com](mailto:contact@cotisan.com).
 
 ## License
-This project is licensed under the [MIT License](LICENSE.md).
+This project is licensed under the [MIT L![Example Image](assets/find.png)
+icense](LICENSE.md).
 
 Thank you for being a part of the Cotisan community and helping to empower artisans in the digital age!
