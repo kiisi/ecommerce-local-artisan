@@ -68,8 +68,8 @@
         height: 100%;
         width: 100%;
          border-radius: 10px;
-         object-fit: contain;
-         object-position: top;
+         object-fit: cover;
+         object-position: center;
        }
   }
     .right{
@@ -261,10 +261,7 @@ cursor: pointer;
     /* Add styles for product listings and categories here */
   }
   
-  /* Process section styles */
-  .process {
-    /* Add styles for behind-the-scenes images or videos here */
-  }
+ 
   
   /* Reviews section styles */
   .reviews {
@@ -275,14 +272,5 @@ cursor: pointer;
     flex-wrap: wrap;
     /* Add styles for customer reviews and testimonials here */
   }
-  
-  /* Contact section styles */
-  .contact {
-    /* Add styles for the contact form or contact information here */
-  }
-  
-  /* Social media section styles */
-  .social-media {
-    /* Add styles for social media links here */
-  }
+ 
   

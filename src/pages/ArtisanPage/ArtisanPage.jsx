@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 // import React from 'react'
@@ -25,6 +26,29 @@ const ArtisanPage = () => {
         return res.data;
       }),
   });
+  const NoUser = ({ type }) => {
+    return (
+      <div className="noUserPage">
+        <img
+          src={type === "find" ? "/assets/find.png" : "/assets/erro.png"}
+          alt=""
+        />
+        {type === "find" ? (
+          <p>
+            {" "}
+           No  User Available in this category ,{" "}
+            <Link style={{ color: "green" }} to="/register">
+              {" "}
+              Register Now{" "}
+            </Link>{" "}
+            to be a creator{" "}
+          </p>
+        ) : (
+          <p>An error occurred , reload or contact cotisans admin</p>
+        )}
+      </div>
+    );
+  };
   return (
     <AnimatePresence mode="wait">
       <div className="catPageContainer">
@@ -35,22 +59,26 @@ const ArtisanPage = () => {
           />
         </div>
 
-        <p style={{marginTop:'40px'}} className="browse">Browse Popular {id}</p>
+        <p style={{ marginTop: "40px" }} className="browse">
+          Browse Popular {id}
+        </p>
 
         <section className="popularCat">
-          {isLoadingUsers
-            ? "Loading"
-            : usersError
-            ? "An Error Occurred"
-            : userCatData.length === 0
-            ? "No User in this category yet.You could register in this category idolo to appear here"
-            : userCatData.map((item) => (
-                <LongCard
-                  link={`/newprofile/${item?._id}` }
-                  item={item}
-                  key={item.description}
-                />
-              ))}
+          {isLoadingUsers ? (
+            "Loading"
+          ) : usersError ? (
+            <NoUser type={"error"} />
+          ) : userCatData.length === 0 ? (
+            <NoUser type={"find"} />
+          ) : (
+            userCatData.map((item) => (
+              <LongCard
+                link={`/newprofile/${item?._id}`}
+                item={item}
+                key={item.description}
+              />
+            ))
+          )}
         </section>
       </div>
     </AnimatePresence>

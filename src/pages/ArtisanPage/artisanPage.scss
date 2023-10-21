@@ -49,3 +49,23 @@ width: 100%;
     }
 }
 
+.noUserPage{
+    width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+img{
+    width: 50%;
+    height: auto;
+    animation: pulse 3s  ease-in-out infinite;
+}
+}
+@keyframes pulse {
+    0%{
+        scale: (0.9);
+    }
+    100%{
+        scale: (1);
+    }
+}

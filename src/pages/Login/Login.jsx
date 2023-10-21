@@ -27,6 +27,8 @@ const Login = () => {
       const res = await newRequest.post("/auth/login", {
         mail,
         password,
+      }, {
+        withCredentials: true,
       });
     
       // // Use a Promise to wait for localStorage to set 'currentUser'

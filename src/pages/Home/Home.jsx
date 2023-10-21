@@ -174,7 +174,7 @@ const Home = () => {
       </section>
 
       <p
-        style={{ marginBottom: "10px", marginLeft: "40px", fontSize: "25px" }}
+        style={{ marginTop: "2rem", marginLeft: "40px", fontSize: "25px" }}
         className="artisanTitle"
       >
         Popular Artisans
