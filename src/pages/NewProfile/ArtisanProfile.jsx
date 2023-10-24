@@ -7,6 +7,9 @@ import newRequest from "../../utils/newRequest";
 import { Link, useParams } from "react-router-dom";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import Card from "../../components/SmallCard/Card";
+import { ToastContainer, toast } from "react-toastify";
+// import { useLocation } from 'react-router-dom';
+import "react-toastify/dist/ReactToastify.css";
 import {
   AiOutlineWhatsApp,
   AiOutlineFacebook,
@@ -67,45 +70,64 @@ const ArtisanProfile = () => {
         return res.data;
       }),
   });
-  console.log(userCatData);
-if (!userData ) return <Loader/>
+  //  console.log(data);
+  if (!userData) return <Loader />;
   return (
     <div className="artisan-profile">
+      <ToastContainer/>
       <header>
         <div className="left">
           <img src={userData?.userImage} alt="Artisan's Profile" />
         </div>
         <div className="right">
-          <h1 style={{
-      display:"flex", alignItems:"center"
-          }}>{userData?.username} <img style={{ width:"20px", height:"20px", objectPostion:"cover"}} src="/assets/verified.jpg" alt="verified" /> </h1>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            {" "}
+            <p style={{ fontSize: "50px" }}>{userData?.username}</p>{" "}
+            <img
+              style={{
+                borderRadius: "50%",
+                margin: "auto 0",
+                width: "20px",
+                height: "20px",
+                objectPostion: "cover",
+              }}
+              src="/assets/verified.jpg"
+              alt="verified"
+            />{" "}
+          </div>
           <p>{userData?.location}</p>
           <section className="bio">
             <h2>About Me</h2>
-            <p>
-              {userData?.description}
-            </p>
+            <p>{userData?.description}</p>
           </section>
           <div className="contact">
             <AiOutlineWhatsApp /> <AiOutlineInstagram /> <AiOutlineTwitter />{" "}
             <AiOutlineFacebook />
           </div>
-         {id === currentUser?._id &&   <div className="btns">
-            {currentUser?.isSeller && (
-              <div onClick={() => setFormOpen(!formOpen)} className="message">
-                <AiOutlineMessage /> Add a product
-              </div>
-            )}
-           {
-            currentUser && <button className="addProduct">Edit Profile</button>
-           } 
-            {currentUser ? (
-             <button onClick={logoutUser}>Logout</button>
-            ) : (
-              <button className="addProduct"><Link to='/login'>Login</Link></button>
-            )}
-          </div>  } 
-        
+          {id === currentUser?._id && (
+            <div className="btns">
+              {currentUser?.isSeller && (
+                <div onClick={() => setFormOpen(!formOpen)} className="message">
+                  <AiOutlineMessage /> Add a product
+                </div>
+              )}
+              {currentUser && (
+                <button className="addProduct">Edit Profile</button>
+              )}
+              {currentUser ? (
+                <button onClick={logoutUser}>Logout</button>
+              ) : (
+                <button className="addProduct">
+                  <Link to="/login">Login</Link>
+                </button>
+              )}
+            </div>
+          )}
         </div>
       </header>
 
@@ -113,23 +135,73 @@ if (!userData ) return <Loader/>
       <section className="gallery">
         <div className="galleryMages">
           <div className="top">
-            <img src="/assets/woman2.jpg" alt="img" />
-            <img src="/assets/fashio.jpg" alt="img" />
+            <img
+              src={
+                data && data[0]?.coverImage
+                  ? data[0].coverImage
+                  : "/assets/fashio.jpg"
+              }
+              alt="img"
+            />
+            <img
+              src={
+                data && data[0]?.images[0]
+                  ? data[0].images[0]
+                  : "/assets/fashio.jpg"
+              }
+              alt="img"
+            />
           </div>
           <div className="center">
             <div className="left">
-              <img src="/assets/man4.jpg" alt="img" />
+              <img
+                src={
+                  data && data[1]?.images[0]
+                    ? data[1].images[0]
+                    : "/assets/man4.jpg"
+                }
+                alt="img"
+              />
             </div>
             <div className="right">
-              <img src="/assets/man3.jpg" alt="img" />
-              <img src="/assets/man1.jpg" alt="img" />
+              <img
+                src={
+                  data && data[0]?.images[1]
+                    ? data[0].images[1]
+                    : "/assets/man3.jpg"
+                }
+                alt="img"
+              />
+              <img
+                src={
+                  data && data[0]?.images[2]
+                    ? data[0].images[2]
+                    : "/assets/man1.jpg"
+                }
+                alt="img"
+              />
             </div>
           </div>
           <div className="top">
-            <img src="/assets/man2.jpg" alt="img" />
-            <img src="/assets/woman2.jpg" alt="img" />
+            <img
+              src={
+                data && data[2]?.images[0]
+                  ? data[2].images[0]
+                  : "/assets/man2.jpg"
+              }
+              alt="img"
+            />
+            <img
+              src={
+                data && data[2]?.images[1]
+                  ? data[2].images[1]
+                  : "/assets/woman2.jpg"
+              }
+              alt="img"
+            />
           </div>
         </div>
+
         {/* Image gallery or slider goes here */}
       </section>
       <h2 className="title">Top Products</h2>
